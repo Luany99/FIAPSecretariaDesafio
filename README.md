@@ -1,4 +1,4 @@
-Sistema administrativo para gestão acadêmica desenvolvido com Clean Architecture e Domain-Driven Design, proporcionando alta maintainabilidade, testabilidade e separação de responsabilidades.
+Sistema administrativo para gestão acadêmica desenvolvido com Clean Architecture e Domain-Driven Design, proporcionando alta manutenibilidade, testabilidade e separação de responsabilidades.
 
 ## 📋 Funcionalidades
 Autenticação JWT com controle de acesso baseado em roles (admin)
