@@ -3,9 +3,9 @@ CREATE TABLE Alunos (
     Id UNIQUEIDENTIFIER PRIMARY KEY,
     Nome NVARCHAR(100) NOT NULL,
     DataNascimento DATE NOT NULL,
-    Cpf NVARCHAR(14) NOT NULL UNIQUE,         -- formato: XXX.XXX.XXX-XX
+    Cpf NVARCHAR(14) NOT NULL UNIQUE,         
     Email NVARCHAR(255) NOT NULL UNIQUE,
-    SenhaHash NVARCHAR(255) NOT NULL          -- hash da senha
+    SenhaHash NVARCHAR(255) NOT NULL         
 );
 
 -- Criação da tabela de TURMAS
@@ -32,18 +32,10 @@ CREATE TABLE Matriculas (
 );
 
 -- Criação da tabela de USUARIOS
-CREATE TABLE Usuarios (
-    Id UNIQUEIDENTIFIER PRIMARY KEY,
-    Email NVARCHAR(255) NOT NULL UNIQUE,
-    SenhaHash NVARCHAR(255) NOT NULL,
+CREATE TABLE Usuario (
+    Id INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+    Username NVARCHAR(50) NOT NULL UNIQUE,
+    PasswordHash NVARCHAR(255) NOT NULL,
+    Email NVARCHAR(100) NOT NULL UNIQUE,
     Role TINYINT NOT NULL
-);
-
--- Inserção de um usuário administrador
-INSERT INTO Usuarios (Id, Email, SenhaHash, Role)
-VALUES (
-    NEWID(),
-    'admin@fiap.com',
-    CONVERT(NVARCHAR(64), HASHBYTES('SHA2_256', 'Admin@@2025'), 2),
-    1
 );
