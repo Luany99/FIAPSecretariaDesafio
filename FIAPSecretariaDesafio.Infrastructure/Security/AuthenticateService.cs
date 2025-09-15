@@ -15,10 +15,10 @@ namespace FIAPSecretariaDesafio.Application.Services
             _userService = userService;
         }
 
-        public string Authenticate(string userName, string password)
+        public string Authenticate(string email, string password)
         {
 
-            var user = _userService.GetUserByName(userName).Result;
+            var user = _userService.GetByEmailAsync(email).Result;
 
             if (user == null || !VerifyPassword(password, user.PasswordHash))
             {
@@ -33,7 +33,7 @@ namespace FIAPSecretariaDesafio.Application.Services
             {
                 Subject = new ClaimsIdentity(new Claim[]
                  {
-                 new Claim(ClaimTypes.NameIdentifier, userName),
+                 new Claim(ClaimTypes.NameIdentifier, user.Username),
                  new Claim(ClaimTypes.Role, user.Role.ToString())
                  }),
                 NotBefore = DateTime.Now,

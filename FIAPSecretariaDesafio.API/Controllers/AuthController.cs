@@ -38,7 +38,7 @@ namespace FIAPSecretariaDesafio.API.Controllers
         {
             try
             {
-                var token = _authService.Authenticate(model.Username, model.Password);
+                var token = _authService.Authenticate(model.Email, model.Password);
                 return Ok(new { Token = token });
             }
             catch (UnauthorizedAccessException ex)
