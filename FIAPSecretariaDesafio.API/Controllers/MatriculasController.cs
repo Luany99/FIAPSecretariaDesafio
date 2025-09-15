@@ -7,7 +7,7 @@ namespace FIAPSecretariaDesafio.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [Authorize] 
+    [Authorize(Roles = "Admin")]
     public class MatriculasController : ControllerBase
     {
         private readonly IMatriculaService _matriculaService;

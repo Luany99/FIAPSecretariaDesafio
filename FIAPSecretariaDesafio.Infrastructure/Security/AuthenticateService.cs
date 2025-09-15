@@ -33,7 +33,8 @@ namespace FIAPSecretariaDesafio.Application.Services
             {
                 Subject = new ClaimsIdentity(new Claim[]
                  {
-                 new Claim(ClaimTypes.NameIdentifier, userName)
+                 new Claim(ClaimTypes.NameIdentifier, userName),
+                 new Claim(ClaimTypes.Role, user.Role.ToString())
                  }),
                 NotBefore = DateTime.Now,
                 Expires = DateTime.UtcNow.AddHours(8),

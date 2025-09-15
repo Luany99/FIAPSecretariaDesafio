@@ -8,7 +8,7 @@ namespace FIAPSecretariaDesafio.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [Authorize] 
+    [Authorize(Roles = "Admin")]
     public class TurmasController : ControllerBase
     {
         private readonly ITurmaService _turmaService;
