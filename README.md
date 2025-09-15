@@ -23,7 +23,7 @@ O projeto segue os princípios da Clean Architecture com separação em camadas:
 **FIAPSecretariaDesafio.Infrastructure:** Implementações de repositório com Dapper, segurança e handlers
 
 ## 🚀 Tecnologias Utilizadas
-.NET 6
+.NET 8
 
 Dapper (Micro-ORM para acesso a dados)
 
